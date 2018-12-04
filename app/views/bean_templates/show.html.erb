@@ -97,7 +97,11 @@
       </dt>
       <!-- Display recommended_machine_id start -->
       <dd>
-        <%= @bean.recommended_machine_id %>
+        <% if @bean.recommended_machine.present? %>
+          <a href="/machines/<%= @bean.recommended_machine_id %>">
+            <%= @bean.recommended_machine.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display recommended_machine_id end -->
 

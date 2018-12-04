@@ -58,13 +58,21 @@
 
         <!-- Display bookmark.user_id start -->
         <td>
-          <%= bookmark.user.username %>
+          <% if bookmark.user.present? %>
+            <a href="/users/<%= bookmark.user.id %>">
+              <%= bookmark.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display bookmark.user_id end -->
 
         <!-- Display bookmark.blogpost_id start -->
         <td>
-          <%= bookmark.blogpost.caption %>
+          <% if bookmark.blogpost.present? %>
+            <a href="/blogposts/<%= bookmark.blogpost.id %>">
+              <%= bookmark.blogpost.caption %>
+            </a>
+          <% end %>
         </td>
         <!-- Display bookmark.blogpost_id end -->
 

@@ -128,7 +128,11 @@
 
         <!-- Display bean.recommended_machine_id start -->
         <td>
-          <%= bean.recommended_machine.name %>
+          <% if bean.recommended_machine.present? %>
+            <a href="/machines/<%= bean.recommended_machine.id %>">
+              <%= bean.recommended_machine.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display bean.recommended_machine_id end -->
 

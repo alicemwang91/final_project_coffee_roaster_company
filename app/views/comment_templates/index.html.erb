@@ -62,7 +62,11 @@
 
         <!-- Display comment.user_id start -->
         <td>
-          <%= comment.user.username %>
+          <% if comment.user.present? %>
+            <a href="/users/<%= comment.user.id %>">
+              <%= comment.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.user_id end -->
 
@@ -74,7 +78,11 @@
 
         <!-- Display comment.blogpost_id start -->
         <td>
-          <%= comment.blogpost.caption %>
+          <% if comment.blogpost.present? %>
+            <a href="/blogposts/<%= comment.blogpost.id %>">
+              <%= comment.blogpost.caption %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.blogpost_id end -->
 

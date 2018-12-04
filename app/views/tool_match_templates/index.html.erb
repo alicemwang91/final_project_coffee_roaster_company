@@ -58,13 +58,21 @@
 
         <!-- Display tool_match.beans_id start -->
         <td>
-          <%= tool_match.beans.origin %>
+          <% if tool_match.beans.present? %>
+            <a href="/beans/<%= tool_match.beans.id %>">
+              <%= tool_match.beans.origin %>
+            </a>
+          <% end %>
         </td>
         <!-- Display tool_match.beans_id end -->
 
         <!-- Display tool_match.tools_id start -->
         <td>
-          <%= tool_match.tools.name %>
+          <% if tool_match.tools.present? %>
+            <a href="/tools/<%= tool_match.tools.id %>">
+              <%= tool_match.tools.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display tool_match.tools_id end -->
 

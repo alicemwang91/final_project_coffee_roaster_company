@@ -74,7 +74,11 @@
 
         <!-- Display blogpost.user_id start -->
         <td>
-          <%= blogpost.user.username %>
+          <% if blogpost.user.present? %>
+            <a href="/users/<%= blogpost.user.id %>">
+              <%= blogpost.user.username %>
+            </a>
+          <% end %>
         </td>
         <!-- Display blogpost.user_id end -->
 
