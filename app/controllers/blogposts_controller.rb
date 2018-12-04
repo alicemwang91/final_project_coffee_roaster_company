@@ -6,6 +6,8 @@ class BlogpostsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @bookmark = Bookmark.new
     @blogpost = Blogpost.find(params.fetch("id_to_display"))
 
     render("blogpost_templates/show.html.erb")
@@ -28,6 +30,22 @@ class BlogpostsController < ApplicationController
       @blogpost.save
 
       redirect_back(:fallback_location => "/blogposts", :notice => "Blogpost created successfully.")
+    else
+      render("blogpost_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_user
+    @blogpost = Blogpost.new
+
+    @blogpost.caption = params.fetch("caption")
+    @blogpost.image = params.fetch("image")
+    @blogpost.user_id = params.fetch("user_id")
+
+    if @blogpost.valid?
+      @blogpost.save
+
+      redirect_to("/users/#{@blogpost.user_id}", notice: "Blogpost created successfully.")
     else
       render("blogpost_templates/new_form_with_errors.html.erb")
     end

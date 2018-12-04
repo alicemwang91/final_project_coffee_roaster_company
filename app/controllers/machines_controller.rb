@@ -6,6 +6,7 @@ class MachinesController < ApplicationController
   end
 
   def show
+    @bean = Bean.new
     @machine = Machine.find(params.fetch("id_to_display"))
 
     render("machine_templates/show.html.erb")

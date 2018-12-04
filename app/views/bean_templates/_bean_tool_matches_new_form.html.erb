@@ -1,0 +1,25 @@
+<!-- Form tool_match start -->
+<form action="/create_tool_match_from_bean" method="post">
+<!-- Form tool_match end -->
+
+  <!-- Label and input for beans_id start -->
+  <!-- Input for beans_id start -->
+  <input type="hidden" name="beans_id" value="<%= @bean.id %>">
+  <!-- Input for beans_id end -->
+
+  <!-- Label and input for tools_id start -->
+  <div class="form-group">
+    <label for="tools_id">
+      Tools
+    </label>
+
+    <!-- Input for tools_id start -->
+    <input type="text" id="tools_id" name="tools_id" class="form-control" value="<%= @tool_match.tools_id %>">
+    <!-- Input for tools_id end -->
+  </div>
+  <!-- Label and input for tools_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create tool match
+  </button>
+</form>

@@ -6,6 +6,7 @@ class ToolsController < ApplicationController
   end
 
   def show
+    @tool_match = ToolMatch.new
     @tool = Tool.find(params.fetch("id_to_display"))
 
     render("tool_templates/show.html.erb")

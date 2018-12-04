@@ -32,6 +32,36 @@ class ToolMatchesController < ApplicationController
     end
   end
 
+  def create_row_from_bean
+    @tool_match = ToolMatch.new
+
+    @tool_match.beans_id = params.fetch("beans_id")
+    @tool_match.tools_id = params.fetch("tools_id")
+
+    if @tool_match.valid?
+      @tool_match.save
+
+      redirect_to("/beans/#{@tool_match.beans_id}", notice: "ToolMatch created successfully.")
+    else
+      render("tool_match_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_tool
+    @tool_match = ToolMatch.new
+
+    @tool_match.beans_id = params.fetch("beans_id")
+    @tool_match.tools_id = params.fetch("tools_id")
+
+    if @tool_match.valid?
+      @tool_match.save
+
+      redirect_to("/tools/#{@tool_match.tools_id}", notice: "ToolMatch created successfully.")
+    else
+      render("tool_match_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @tool_match = ToolMatch.find(params.fetch("prefill_with_id"))
 

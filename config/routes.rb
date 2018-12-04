@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/blogposts/new", { :controller => "blogposts", :action => "new_form" })
   post("/create_blogpost", { :controller => "blogposts", :action => "create_row" })
+  post("/create_blogpost_from_user", { :controller => "blogposts", :action => "create_row_from_user" })
 
   # READ
   get("/blogposts", { :controller => "blogposts", :action => "index" })
@@ -45,6 +46,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/comments/new", { :controller => "comments", :action => "new_form" })
   post("/create_comment", { :controller => "comments", :action => "create_row" })
+  post("/create_comment_from_blogpost", { :controller => "comments", :action => "create_row_from_blogpost" })
+  post("/create_comment_from_user", { :controller => "comments", :action => "create_row_from_user" })
 
   # READ
   get("/comments", { :controller => "comments", :action => "index" })
@@ -66,6 +69,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/bookmarks/new", { :controller => "bookmarks", :action => "new_form" })
   post("/create_bookmark", { :controller => "bookmarks", :action => "create_row" })
+  post("/create_bookmark_from_blogpost", { :controller => "bookmarks", :action => "create_row_from_blogpost" })
+  post("/create_bookmark_from_user", { :controller => "bookmarks", :action => "create_row_from_user" })
 
   # READ
   get("/bookmarks", { :controller => "bookmarks", :action => "index" })
@@ -106,6 +111,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/tool_matches/new", { :controller => "tool_matches", :action => "new_form" })
   post("/create_tool_match", { :controller => "tool_matches", :action => "create_row" })
+  post("/create_tool_match_from_tool", { :controller => "tool_matches", :action => "create_row_from_tool" })
+  post("/create_tool_match_from_bean", { :controller => "tool_matches", :action => "create_row_from_bean" })
 
   # READ
   get("/tool_matches", { :controller => "tool_matches", :action => "index" })
@@ -165,6 +172,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/beans/new", { :controller => "beans", :action => "new_form" })
   post("/create_bean", { :controller => "beans", :action => "create_row" })
+  post("/create_bean_from_machine", { :controller => "beans", :action => "create_row_from_machine" })
 
   # READ
   get("/beans", { :controller => "beans", :action => "index" })
