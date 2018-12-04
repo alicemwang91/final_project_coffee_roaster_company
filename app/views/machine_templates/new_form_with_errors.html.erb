@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @machine.present? %>
+  <% if @machine.errors.any? %>
+    <% @machine.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new machine
+</h1>
+
+
+<hr>
+
+<!-- Form machine start -->
+<form action="/create_machine" method="post">
+<!-- Form machine end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @machine.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <label for="price">
+      Price
+    </label>
+
+    <!-- Input for price start -->
+    <input type="text" id="price" name="price" class="form-control" value="<%= @machine.price %>">
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for service start -->
+  <div class="form-group">
+    <label for="service">
+      Service
+    </label>
+
+    <!-- Input for service start -->
+    <input type="text" id="service" name="service" class="form-control" value="<%= @machine.service %>">
+    <!-- Input for service end -->
+  </div>
+  <!-- Label and input for service end -->
+
+  <!-- Label and input for photo start -->
+  <div class="form-group">
+    <label for="photo">
+      Photo
+    </label>
+
+    <!-- Input for photo start -->
+    <input type="text" id="photo" name="photo" class="form-control" value="<%= @machine.photo %>">
+    <!-- Input for photo end -->
+  </div>
+  <!-- Label and input for photo end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create machine
+  </button>
+</form>
+
+<hr>
+
+<a href="/machines">
+  Go back
+</a>
