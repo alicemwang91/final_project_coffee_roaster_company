@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for tools_id start -->
-    <input type="text" id="tools_id" name="tools_id" class="form-control">
+    <%= select_tag(:tools_id, options_from_collection_for_select(Tool.all, :id, :name, @tool_match.tools_id), :class => "form-control") %>
     <!-- Input for tools_id end -->
   </div>
   <!-- Label and input for tools_id end -->
