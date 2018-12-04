@@ -1,6 +1,6 @@
 class ToolsController < ApplicationController
   def index
-    @tools = Tool.all
+    @tools = Tool.page(params[:page]).per(10)
 
     render("tool_templates/index.html.erb")
   end

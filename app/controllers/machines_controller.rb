@@ -1,6 +1,6 @@
 class MachinesController < ApplicationController
   def index
-    @machines = Machine.all
+    @machines = Machine.page(params[:page]).per(10)
 
     render("machine_templates/index.html.erb")
   end

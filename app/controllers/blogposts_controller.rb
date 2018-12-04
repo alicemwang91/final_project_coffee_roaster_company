@@ -1,6 +1,6 @@
 class BlogpostsController < ApplicationController
   def index
-    @blogposts = Blogpost.all
+    @blogposts = Blogpost.page(params[:page]).per(10)
 
     render("blogpost_templates/index.html.erb")
   end
