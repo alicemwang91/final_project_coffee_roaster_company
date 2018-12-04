@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @bean.tool_matches.each do |tool_match| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/tool_matches/<%= tool_match.id %>">
           <%= tool_match.beans_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_tool_match_from_beans/<%= tool_match.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="bean_tool_matches_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "bean_templates/bean_tool_matches_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

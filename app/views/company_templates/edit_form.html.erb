@@ -4,46 +4,32 @@
 
 <hr>
 
-<!-- Form company start -->
 <form action="/update_company/<%= @company.id %>" method="post" enctype="multipart/form-data">
-<!-- Form company end -->
 
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <label for="photo">
       Photo
     </label>
 
-    <!-- Input for photo start -->
     <%= cl_image_tag(@company.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="photo" name="photo" class="form-control">
-    <!-- Input for photo end -->
   </div>
-  <!-- Label and input for photo end -->
 
-  <!-- Label and input for caption start -->
   <div class="form-group">
     <label for="caption">
       Caption
     </label>
 
-    <!-- Input for caption start -->
     <textarea id="caption" name="caption" class="form-control" rows="3"><%= @company.caption %></textarea>
-    <!-- Input for caption end -->
   </div>
-  <!-- Label and input for caption end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <label for="title">
       Title
     </label>
 
-    <!-- Input for title start -->
     <textarea id="title" name="title" class="form-control" rows="3"><%= @company.title %></textarea>
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update company

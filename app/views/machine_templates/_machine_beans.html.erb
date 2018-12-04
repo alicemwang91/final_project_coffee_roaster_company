@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @machine.beans.each do |bean| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/beans/<%= bean.id %>">
           <%= bean.origin %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_bean_from_recommended_machine/<%= bean.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="machine_beans_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "machine_templates/machine_beans_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

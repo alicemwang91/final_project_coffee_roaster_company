@@ -6,11 +6,9 @@
   <ul class="list-group list-group-flush">
     <% @bean.tools.each do |tool| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/tools/<%= tool.id %>">
           <%= tool.name %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

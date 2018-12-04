@@ -1,23 +1,14 @@
-<!-- Form tool_match start -->
 <form action="/create_tool_match_from_tool" method="post">
-<!-- Form tool_match end -->
 
-  <!-- Label and input for beans_id start -->
   <div class="form-group">
     <label for="beans_id">
       Beans
     </label>
 
-    <!-- Input for beans_id start -->
     <%= select_tag(:beans_id, options_from_collection_for_select(Bean.all, :id, :origin, @tool_match.beans_id), :class => "form-control") %>
-    <!-- Input for beans_id end -->
   </div>
-  <!-- Label and input for beans_id end -->
 
-  <!-- Label and input for tools_id start -->
-  <!-- Input for tools_id start -->
   <input type="hidden" name="tools_id" value="<%= @tool.id %>">
-  <!-- Input for tools_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create tool match

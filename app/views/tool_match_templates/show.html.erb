@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link tool_match start -->
       <div class="col">
         <a href="/tool_matches/<%= @tool_match.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit tool match
         </a>
       </div>
-      <!-- Edit link tool_match end -->
 
-      <!-- Delete link tool_match start -->
       <div class="col">
         <a href="/delete_tool_match/<%= @tool_match.id %>" class="btn btn-block btn-outline-secondary">
           Delete tool match
         </a>
       </div>
-      <!-- Delete link tool_match end -->
     </div>
 
     <dl>
       <dt>
         Beans
       </dt>
-      <!-- Display beans_id start -->
       <dd>
         <% if @tool_match.beans.present? %>
           <a href="/beans/<%= @tool_match.beans_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display beans_id end -->
 
       <dt>
         Tools
       </dt>
-      <!-- Display tools_id start -->
       <dd>
         <% if @tool_match.tools.present? %>
           <a href="/tools/<%= @tool_match.tools_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display tools_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@tool_match.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@tool_match.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

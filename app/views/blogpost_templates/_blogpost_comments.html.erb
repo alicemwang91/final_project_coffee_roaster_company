@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @blogpost.comments.each do |comment| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/comments/<%= comment.id %>">
           <%= comment.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_comment_from_blogpost/<%= comment.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="blogpost_comments_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "blogpost_templates/blogpost_comments_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

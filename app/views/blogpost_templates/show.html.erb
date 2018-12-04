@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link blogpost start -->
       <div class="col">
         <a href="/blogposts/<%= @blogpost.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit blogpost
         </a>
       </div>
-      <!-- Edit link blogpost end -->
 
-      <!-- Delete link blogpost start -->
       <div class="col">
         <a href="/delete_blogpost/<%= @blogpost.id %>" class="btn btn-block btn-outline-secondary">
           Delete blogpost
         </a>
       </div>
-      <!-- Delete link blogpost end -->
     </div>
 
     <dl>
       <dt>
         Caption
       </dt>
-      <!-- Display caption start -->
       <dd>
         <%= @blogpost.caption %>
       </dd>
-      <!-- Display caption end -->
 
       <dt>
         Image
       </dt>
-      <!-- Display image start -->
       <dd>
         <img src="<%= @blogpost.image %>" class="img-fluid">
       </dd>
-      <!-- Display image end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @blogpost.user.present? %>
           <a href="/users/<%= @blogpost.user_id %>">
@@ -58,30 +49,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@blogpost.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@blogpost.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "blogpost_templates/blogpost_bookmarks" %>
@@ -99,4 +84,3 @@
     <%= render partial: "blogpost_templates/blogpost_bookmarked_users" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

@@ -4,58 +4,40 @@
 
 <hr>
 
-<!-- Form machine start -->
 <form action="/update_machine/<%= @machine.id %>" method="post" enctype="multipart/form-data">
-<!-- Form machine end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @machine.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for price start -->
   <div class="form-group">
     <label for="price">
       Price
     </label>
 
-    <!-- Input for price start -->
     <input type="text" id="price" name="price" class="form-control" value="<%= @machine.price %>">
-    <!-- Input for price end -->
   </div>
-  <!-- Label and input for price end -->
 
-  <!-- Label and input for service start -->
   <div class="form-group">
     <label for="service">
       Service
     </label>
 
-    <!-- Input for service start -->
     <input type="text" id="service" name="service" class="form-control" value="<%= @machine.service %>">
-    <!-- Input for service end -->
   </div>
-  <!-- Label and input for service end -->
 
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <label for="photo">
       Photo
     </label>
 
-    <!-- Input for photo start -->
     <%= cl_image_tag(@machine.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="photo" name="photo" class="form-control">
-    <!-- Input for photo end -->
   </div>
-  <!-- Label and input for photo end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update machine
