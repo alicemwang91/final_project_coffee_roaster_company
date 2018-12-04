@@ -1,0 +1,44 @@
+<h1>
+  Edit tool match #<%= @tool_match.id %>
+</h1>
+
+<hr>
+
+<!-- Form tool_match start -->
+<form action="/update_tool_match/<%= @tool_match.id %>" method="post">
+<!-- Form tool_match end -->
+
+  <!-- Label and input for beans_id start -->
+  <div class="form-group">
+    <label for="beans_id">
+      Beans
+    </label>
+
+    <!-- Input for beans_id start -->
+    <input type="text" id="beans_id" name="beans_id" class="form-control" value="<%= @tool_match.beans_id %>">
+    <!-- Input for beans_id end -->
+  </div>
+  <!-- Label and input for beans_id end -->
+
+  <!-- Label and input for tools_id start -->
+  <div class="form-group">
+    <label for="tools_id">
+      Tools
+    </label>
+
+    <!-- Input for tools_id start -->
+    <input type="text" id="tools_id" name="tools_id" class="form-control" value="<%= @tool_match.tools_id %>">
+    <!-- Input for tools_id end -->
+  </div>
+  <!-- Label and input for tools_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update tool match
+  </button>
+</form>
+
+<hr>
+
+<a href="/tool_matches">
+  Go back
+</a>
