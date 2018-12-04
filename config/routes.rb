@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Blogpost resource:
+
+  # CREATE
+  get("/blogposts/new", { :controller => "blogposts", :action => "new_form" })
+  post("/create_blogpost", { :controller => "blogposts", :action => "create_row" })
+
+  # READ
+  get("/blogposts", { :controller => "blogposts", :action => "index" })
+  get("/blogposts/:id_to_display", { :controller => "blogposts", :action => "show" })
+
+  # UPDATE
+  get("/blogposts/:prefill_with_id/edit", { :controller => "blogposts", :action => "edit_form" })
+  post("/update_blogpost/:id_to_modify", { :controller => "blogposts", :action => "update_row" })
+
+  # DELETE
+  get("/delete_blogpost/:id_to_remove", { :controller => "blogposts", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Comment resource:
 
   # CREATE

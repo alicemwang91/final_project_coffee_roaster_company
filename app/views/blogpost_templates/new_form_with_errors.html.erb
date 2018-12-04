@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @blogpost.present? %>
+  <% if @blogpost.errors.any? %>
+    <% @blogpost.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new blogpost
+</h1>
+
+
+<hr>
+
+<!-- Form blogpost start -->
+<form action="/create_blogpost" method="post">
+<!-- Form blogpost end -->
+
+  <!-- Label and input for caption start -->
+  <div class="form-group">
+    <label for="caption">
+      Caption
+    </label>
+
+    <!-- Input for caption start -->
+    <textarea id="caption" name="caption" class="form-control" rows="3"><%= @blogpost.caption %></textarea>
+    <!-- Input for caption end -->
+  </div>
+  <!-- Label and input for caption end -->
+
+  <!-- Label and input for image start -->
+  <div class="form-group">
+    <label for="image">
+      Image
+    </label>
+
+    <!-- Input for image start -->
+    <input type="text" id="image" name="image" class="form-control" value="<%= @blogpost.image %>">
+    <!-- Input for image end -->
+  </div>
+  <!-- Label and input for image end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @blogpost.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create blogpost
+  </button>
+</form>
+
+<hr>
+
+<a href="/blogposts">
+  Go back
+</a>
