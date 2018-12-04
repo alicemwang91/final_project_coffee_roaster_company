@@ -1,4 +1,6 @@
 ActiveAdmin.register Bean do
+
+ permit_params :origin, :roast, :process_method, :flavor, :altitude, :precipitation, :instruction, :recommended_machine_id, :photo
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
