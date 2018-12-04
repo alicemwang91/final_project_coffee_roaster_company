@@ -1,4 +1,6 @@
 class Bean < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   # Direct associations
 
   belongs_to :recommended_machine,

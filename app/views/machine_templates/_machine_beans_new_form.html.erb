@@ -1,5 +1,5 @@
 <!-- Form bean start -->
-<form action="/create_bean_from_machine" method="post">
+<form action="/create_bean" method="post" enctype="multipart/form-data">
 <!-- Form bean end -->
 
   <!-- Label and input for origin start -->
@@ -98,7 +98,7 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control" value="<%= @bean.photo %>">
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->

@@ -1,4 +1,6 @@
 class Tool < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   # Direct associations
 
   has_many   :tool_matches,

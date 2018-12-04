@@ -5,7 +5,7 @@
 <hr>
 
 <!-- Form tool start -->
-<form action="/update_tool/<%= @tool.id %>" method="post">
+<form action="/update_tool/<%= @tool.id %>" method="post" enctype="multipart/form-data">
 <!-- Form tool end -->
 
   <!-- Label and input for name start -->
@@ -39,7 +39,8 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control" value="<%= @tool.photo %>">
+    <%= cl_image_tag(@tool.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->

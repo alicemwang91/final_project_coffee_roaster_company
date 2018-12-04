@@ -20,7 +20,7 @@ class CompaniesController < ApplicationController
   def create_row
     @company = Company.new
 
-    @company.photo = params.fetch("photo")
+    @company.photo = params.fetch("photo") if params.key?("photo")
     @company.caption = params.fetch("caption")
     @company.title = params.fetch("title")
 
@@ -42,7 +42,7 @@ class CompaniesController < ApplicationController
   def update_row
     @company = Company.find(params.fetch("id_to_modify"))
 
-    @company.photo = params.fetch("photo")
+    @company.photo = params.fetch("photo") if params.key?("photo")
     @company.caption = params.fetch("caption")
     @company.title = params.fetch("title")
 

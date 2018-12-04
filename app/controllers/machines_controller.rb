@@ -24,7 +24,7 @@ class MachinesController < ApplicationController
     @machine.name = params.fetch("name")
     @machine.price = params.fetch("price")
     @machine.service = params.fetch("service")
-    @machine.photo = params.fetch("photo")
+    @machine.photo = params.fetch("photo") if params.key?("photo")
 
     if @machine.valid?
       @machine.save
@@ -47,7 +47,7 @@ class MachinesController < ApplicationController
     @machine.name = params.fetch("name")
     @machine.price = params.fetch("price")
     @machine.service = params.fetch("service")
-    @machine.photo = params.fetch("photo")
+    @machine.photo = params.fetch("photo") if params.key?("photo")
 
     if @machine.valid?
       @machine.save

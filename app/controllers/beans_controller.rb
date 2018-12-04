@@ -29,7 +29,7 @@ class BeansController < ApplicationController
     @bean.precipitation = params.fetch("precipitation")
     @bean.instruction = params.fetch("instruction")
     @bean.recommended_machine_id = params.fetch("recommended_machine_id")
-    @bean.photo = params.fetch("photo")
+    @bean.photo = params.fetch("photo") if params.key?("photo")
 
     if @bean.valid?
       @bean.save
@@ -51,7 +51,7 @@ class BeansController < ApplicationController
     @bean.precipitation = params.fetch("precipitation")
     @bean.instruction = params.fetch("instruction")
     @bean.recommended_machine_id = params.fetch("recommended_machine_id")
-    @bean.photo = params.fetch("photo")
+    @bean.photo = params.fetch("photo") if params.key?("photo")
 
     if @bean.valid?
       @bean.save
@@ -79,7 +79,7 @@ class BeansController < ApplicationController
     @bean.precipitation = params.fetch("precipitation")
     @bean.instruction = params.fetch("instruction")
     @bean.recommended_machine_id = params.fetch("recommended_machine_id")
-    @bean.photo = params.fetch("photo")
+    @bean.photo = params.fetch("photo") if params.key?("photo")
 
     if @bean.valid?
       @bean.save

@@ -23,7 +23,7 @@ class ToolsController < ApplicationController
 
     @tool.name = params.fetch("name")
     @tool.price = params.fetch("price")
-    @tool.photo = params.fetch("photo")
+    @tool.photo = params.fetch("photo") if params.key?("photo")
 
     if @tool.valid?
       @tool.save
@@ -45,7 +45,7 @@ class ToolsController < ApplicationController
 
     @tool.name = params.fetch("name")
     @tool.price = params.fetch("price")
-    @tool.photo = params.fetch("photo")
+    @tool.photo = params.fetch("photo") if params.key?("photo")
 
     if @tool.valid?
       @tool.save

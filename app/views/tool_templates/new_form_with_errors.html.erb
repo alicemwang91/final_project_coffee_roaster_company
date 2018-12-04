@@ -17,7 +17,7 @@
 <hr>
 
 <!-- Form tool start -->
-<form action="/create_tool" method="post">
+<form action="/create_tool" method="post" enctype="multipart/form-data">
 <!-- Form tool end -->
 
   <!-- Label and input for name start -->
@@ -51,7 +51,7 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control" value="<%= @tool.photo %>">
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->

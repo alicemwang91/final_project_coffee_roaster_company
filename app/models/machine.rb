@@ -1,4 +1,6 @@
 class Machine < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   # Direct associations
 
   has_many   :beans,

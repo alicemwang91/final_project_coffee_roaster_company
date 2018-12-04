@@ -14,7 +14,7 @@
 <hr>
 
 <!-- Form bean start -->
-<form action="/update_bean/<%= @bean.id %>" method="post">
+<form action="/update_bean/<%= @bean.id %>" method="post" enctype="multipart/form-data">
 <!-- Form bean end -->
 
   <!-- Label and input for origin start -->
@@ -120,7 +120,8 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control" value="<%= @bean.photo %>">
+    <%= cl_image_tag(@bean.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->
