@@ -4,6 +4,8 @@ RSpec.describe ToolMatch, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:tools) }
+
     it { should belong_to(:beans) }
 
     end
