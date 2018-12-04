@@ -1,6 +1,7 @@
 class BlogpostsController < ApplicationController
   def index
-    @blogposts = Blogpost.page(params[:page]).per(10)
+    @q = Blogpost.ransack(params[:q])
+    @blogposts = @q.result(:distinct => true).includes(:user, :bookmarks, :comments, :bookmarked_users).page(params[:page]).per(10)
 
     render("blogpost_templates/index.html.erb")
   end

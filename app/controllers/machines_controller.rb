@@ -1,6 +1,7 @@
 class MachinesController < ApplicationController
   def index
-    @machines = Machine.page(params[:page]).per(10)
+    @q = Machine.ransack(params[:q])
+    @machines = @q.result(:distinct => true).includes(:beans).page(params[:page]).per(10)
 
     render("machine_templates/index.html.erb")
   end

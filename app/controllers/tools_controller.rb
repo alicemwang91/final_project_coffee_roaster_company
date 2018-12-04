@@ -1,6 +1,7 @@
 class ToolsController < ApplicationController
   def index
-    @tools = Tool.page(params[:page]).per(10)
+    @q = Tool.ransack(params[:q])
+    @tools = @q.result(:distinct => true).includes(:tool_matches, :beans).page(params[:page]).per(10)
 
     render("tool_templates/index.html.erb")
   end

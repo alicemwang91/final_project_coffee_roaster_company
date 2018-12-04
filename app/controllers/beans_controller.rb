@@ -1,6 +1,7 @@
 class BeansController < ApplicationController
   def index
-    @beans = Bean.page(params[:page]).per(10)
+    @q = Bean.ransack(params[:q])
+    @beans = @q.result(:distinct => true).includes(:tool_matches, :recommended_machine, :tools).page(params[:page]).per(10)
 
     render("bean_templates/index.html.erb")
   end
