@@ -108,7 +108,7 @@
     </label>
 
     <!-- Input for recommended_machine_id start -->
-    <input type="text" id="recommended_machine_id" name="recommended_machine_id" class="form-control" value="<%= @bean.recommended_machine_id %>">
+    <%= select_tag(:recommended_machine_id, options_from_collection_for_select(Machine.all, :id, :name, @bean.recommended_machine_id), :class => "form-control") %>
     <!-- Input for recommended_machine_id end -->
   </div>
   <!-- Label and input for recommended_machine_id end -->
