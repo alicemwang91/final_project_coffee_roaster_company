@@ -67,6 +67,14 @@ class BeansController < ApplicationController
     end
   end
 
+  def destroy_row_from_recommended_machine
+    @bean = Bean.find(params.fetch("id_to_remove"))
+
+    @bean.destroy
+
+    redirect_to("/machines/#{@bean.recommended_machine_id}", notice: "Bean deleted successfully.")
+  end
+
   def destroy_row
     @bean = Bean.find(params.fetch("id_to_remove"))
 

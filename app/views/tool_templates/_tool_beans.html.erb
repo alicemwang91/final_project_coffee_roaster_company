@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Beans
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @tool.beans.each do |bean| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/beans/<%= bean.id %>">
+          <%= bean.origin %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

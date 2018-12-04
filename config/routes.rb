@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_blogpost/:id_to_remove", { :controller => "blogposts", :action => "destroy_row" })
+  get("/delete_blogpost_from_user/:id_to_remove", { :controller => "blogposts", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -55,6 +56,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_comment/:id_to_remove", { :controller => "comments", :action => "destroy_row" })
+  get("/delete_comment_from_blogpost/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_blogpost" })
+  get("/delete_comment_from_user/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -74,6 +77,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_bookmark/:id_to_remove", { :controller => "bookmarks", :action => "destroy_row" })
+  get("/delete_bookmark_from_blogpost/:id_to_remove", { :controller => "bookmarks", :action => "destroy_row_from_blogpost" })
+  get("/delete_bookmark_from_user/:id_to_remove", { :controller => "bookmarks", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -112,6 +117,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_tool_match/:id_to_remove", { :controller => "tool_matches", :action => "destroy_row" })
+  get("/delete_tool_match_from_tools/:id_to_remove", { :controller => "tool_matches", :action => "destroy_row_from_tools" })
+  get("/delete_tool_match_from_beans/:id_to_remove", { :controller => "tool_matches", :action => "destroy_row_from_beans" })
 
   #------------------------------
 
@@ -169,6 +176,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_bean/:id_to_remove", { :controller => "beans", :action => "destroy_row" })
+  get("/delete_bean_from_recommended_machine/:id_to_remove", { :controller => "beans", :action => "destroy_row_from_recommended_machine" })
 
   #------------------------------
 

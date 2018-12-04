@@ -53,6 +53,22 @@ class ToolMatchesController < ApplicationController
     end
   end
 
+  def destroy_row_from_beans
+    @tool_match = ToolMatch.find(params.fetch("id_to_remove"))
+
+    @tool_match.destroy
+
+    redirect_to("/beans/#{@tool_match.beans_id}", notice: "ToolMatch deleted successfully.")
+  end
+
+  def destroy_row_from_tools
+    @tool_match = ToolMatch.find(params.fetch("id_to_remove"))
+
+    @tool_match.destroy
+
+    redirect_to("/tools/#{@tool_match.tools_id}", notice: "ToolMatch deleted successfully.")
+  end
+
   def destroy_row
     @tool_match = ToolMatch.find(params.fetch("id_to_remove"))
 
