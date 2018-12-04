@@ -1,0 +1,136 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Bean #<%= @bean.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/beans" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link bean start -->
+      <div class="col">
+        <a href="/beans/<%= @bean.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit bean
+        </a>
+      </div>
+      <!-- Edit link bean end -->
+
+      <!-- Delete link bean start -->
+      <div class="col">
+        <a href="/delete_bean/<%= @bean.id %>" class="btn btn-block btn-outline-secondary">
+          Delete bean
+        </a>
+      </div>
+      <!-- Delete link bean end -->
+    </div>
+
+    <dl>
+      <dt>
+        Origin
+      </dt>
+      <!-- Display origin start -->
+      <dd>
+        <%= @bean.origin %>
+      </dd>
+      <!-- Display origin end -->
+
+      <dt>
+        Roast
+      </dt>
+      <!-- Display roast start -->
+      <dd>
+        <%= @bean.roast %>
+      </dd>
+      <!-- Display roast end -->
+
+      <dt>
+        Process method
+      </dt>
+      <!-- Display process_method start -->
+      <dd>
+        <%= @bean.process_method %>
+      </dd>
+      <!-- Display process_method end -->
+
+      <dt>
+        Flavor
+      </dt>
+      <!-- Display flavor start -->
+      <dd>
+        <%= @bean.flavor %>
+      </dd>
+      <!-- Display flavor end -->
+
+      <dt>
+        Altitude
+      </dt>
+      <!-- Display altitude start -->
+      <dd>
+        <%= @bean.altitude %>
+      </dd>
+      <!-- Display altitude end -->
+
+      <dt>
+        Precipitation
+      </dt>
+      <!-- Display precipitation start -->
+      <dd>
+        <%= @bean.precipitation %>
+      </dd>
+      <!-- Display precipitation end -->
+
+      <dt>
+        Instruction
+      </dt>
+      <!-- Display instruction start -->
+      <dd>
+        <%= @bean.instruction %>
+      </dd>
+      <!-- Display instruction end -->
+
+      <dt>
+        Recommended machine
+      </dt>
+      <!-- Display recommended_machine_id start -->
+      <dd>
+        <%= @bean.recommended_machine_id %>
+      </dd>
+      <!-- Display recommended_machine_id end -->
+
+      <dt>
+        Photo
+      </dt>
+      <!-- Display photo start -->
+      <dd>
+        <%= @bean.photo %>
+      </dd>
+      <!-- Display photo end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@bean.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@bean.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
