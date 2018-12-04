@@ -14,6 +14,8 @@ RSpec.describe Blogpost, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:bookmarked_users) }
+
     end
 
     describe "Validations" do

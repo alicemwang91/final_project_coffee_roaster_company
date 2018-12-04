@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :bookmarked_blogposts,
+             :through => :bookmarks,
+             :source => :blogpost
+
   # Validations
 
 end
