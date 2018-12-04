@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for blogpost_id start -->
-    <input type="text" id="blogpost_id" name="blogpost_id" class="form-control" value="<%= @comment.blogpost_id %>">
+    <%= select_tag(:blogpost_id, options_from_collection_for_select(Blogpost.all, :id, :caption, @comment.blogpost_id), :class => "form-control") %>
     <!-- Input for blogpost_id end -->
   </div>
   <!-- Label and input for blogpost_id end -->
