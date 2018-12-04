@@ -10,6 +10,10 @@ class Bean < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :tools,
+             :through => :tool_matches,
+             :source => :tools
+
   # Validations
 
 end

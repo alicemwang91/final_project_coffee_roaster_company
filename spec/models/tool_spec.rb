@@ -10,6 +10,8 @@ RSpec.describe Tool, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:beans) }
+
     end
 
     describe "Validations" do

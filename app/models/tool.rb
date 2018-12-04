@@ -7,6 +7,10 @@ class Tool < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :beans,
+             :through => :tool_matches,
+             :source => :beans
+
   # Validations
 
 end
