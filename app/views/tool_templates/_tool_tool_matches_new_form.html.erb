@@ -9,7 +9,7 @@
     </label>
 
     <!-- Input for beans_id start -->
-    <input type="text" id="beans_id" name="beans_id" class="form-control" value="<%= @tool_match.beans_id %>">
+    <%= select_tag(:beans_id, options_from_collection_for_select(Bean.all, :id, :origin, @tool_match.beans_id), :class => "form-control") %>
     <!-- Input for beans_id end -->
   </div>
   <!-- Label and input for beans_id end -->
