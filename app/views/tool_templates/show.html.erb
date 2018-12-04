@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Tool #<%= @tool.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/tools" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link tool start -->
+      <div class="col">
+        <a href="/tools/<%= @tool.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit tool
+        </a>
+      </div>
+      <!-- Edit link tool end -->
+
+      <!-- Delete link tool start -->
+      <div class="col">
+        <a href="/delete_tool/<%= @tool.id %>" class="btn btn-block btn-outline-secondary">
+          Delete tool
+        </a>
+      </div>
+      <!-- Delete link tool end -->
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @tool.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Price
+      </dt>
+      <!-- Display price start -->
+      <dd>
+        <%= @tool.price %>
+      </dd>
+      <!-- Display price end -->
+
+      <dt>
+        Photo
+      </dt>
+      <!-- Display photo start -->
+      <dd>
+        <%= @tool.photo %>
+      </dd>
+      <!-- Display photo end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@tool.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@tool.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

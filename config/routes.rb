@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Tool resource:
+
+  # CREATE
+  get("/tools/new", { :controller => "tools", :action => "new_form" })
+  post("/create_tool", { :controller => "tools", :action => "create_row" })
+
+  # READ
+  get("/tools", { :controller => "tools", :action => "index" })
+  get("/tools/:id_to_display", { :controller => "tools", :action => "show" })
+
+  # UPDATE
+  get("/tools/:prefill_with_id/edit", { :controller => "tools", :action => "edit_form" })
+  post("/update_tool/:id_to_modify", { :controller => "tools", :action => "update_row" })
+
+  # DELETE
+  get("/delete_tool/:id_to_remove", { :controller => "tools", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Machine resource:
 
   # CREATE
