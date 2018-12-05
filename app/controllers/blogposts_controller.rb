@@ -26,6 +26,7 @@ class BlogpostsController < ApplicationController
     @blogpost.caption = params.fetch("caption")
     @blogpost.image = params.fetch("image") if params.key?("image")
     @blogpost.user_id = params.fetch("user_id")
+    @blogpost.body = params.fetch("body")
 
     if @blogpost.valid?
       @blogpost.save
@@ -42,6 +43,7 @@ class BlogpostsController < ApplicationController
     @blogpost.caption = params.fetch("caption")
     @blogpost.image = params.fetch("image") if params.key?("image")
     @blogpost.user_id = params.fetch("user_id")
+    @blogpost.body = params.fetch("body")
 
     if @blogpost.valid?
       @blogpost.save
@@ -64,6 +66,7 @@ class BlogpostsController < ApplicationController
     @blogpost.caption = params.fetch("caption")
     @blogpost.image = params.fetch("image") if params.key?("image")
     @blogpost.user_id = params.fetch("user_id")
+    @blogpost.body = params.fetch("body")
 
     if @blogpost.valid?
       @blogpost.save
