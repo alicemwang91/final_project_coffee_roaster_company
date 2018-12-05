@@ -4,6 +4,7 @@ class CreateBlogposts < ActiveRecord::Migration[5.1]
       t.text :caption
       t.string :image
       t.integer :user_id
+      t.text :body
 
       t.timestamps
     end
